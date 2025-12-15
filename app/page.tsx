@@ -28,7 +28,7 @@ const ShieldIcon = () => (
 const features = [
   {
     icon: ChartIcon,
-    title: "Expense Tracking",
+    title: "Expenses Tracking",
     description: "Effortlessly log and categorize every transaction with intuitive controls.",
   },
   {
