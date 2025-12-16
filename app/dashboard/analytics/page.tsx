@@ -257,7 +257,7 @@ export default function AnalyticsPage() {
                                 <Tooltip
                                     contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: '8px' }}
                                     itemStyle={{ color: 'var(--foreground)' }}
-                                    formatter={(value: number) => `$${value.toFixed(2)}`}
+                                    formatter={(value: number | undefined) => `$${(value || 0).toFixed(2)}`}
                                 />
                                 <Legend iconType="circle" />
                             </PieChart>
