@@ -109,10 +109,20 @@ export function AddTransactionForm({ onSuccess }: { onSuccess?: () => void }) {
                                 id="amount"
                                 type="number"
                                 step="0.01"
+                                min="0"
                                 placeholder="0.00"
                                 className="pl-7 text-lg"
                                 value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    if (parseFloat(val) < 0) return;
+                                    setAmount(val);
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === '-' || e.key === 'e') {
+                                        e.preventDefault();
+                                    }
+                                }}
                                 required
                                 autoFocus // Optimizing for speed
                             />

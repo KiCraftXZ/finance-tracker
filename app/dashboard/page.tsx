@@ -79,7 +79,7 @@ export default function DashboardPage() {
                 <Link href="/dashboard/expenses">
                     <Button>
                         <Plus className="w-4 h-4 mr-2" />
-                        Add Expense
+                        Add Transaction
                     </Button>
                 </Link>
             </div>

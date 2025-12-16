@@ -3,7 +3,7 @@
 import { useLiveQuery } from "dexie-react-hooks"
 import { format } from "date-fns"
 import { db, type Expense, type Category } from "@/lib/db"
-import { AddExpenseForm } from "@/components/add-expense-form"
+import { AddTransactionForm } from "@/components/add-transaction-form"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Plus } from "lucide-react"
 import { useState } from "react"
@@ -26,17 +26,17 @@ export default function ExpensesPage() {
         <div className="space-y-6">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Expenses</h1>
-                    <p className="text-[var(--muted)]">Log and view your transactions.</p>
+                    <h1 className="text-3xl font-bold tracking-tight">Transactions</h1>
+                    <p className="text-[var(--muted)]">Log and view your expenses and income.</p>
                 </div>
                 <Button onClick={() => setShowAddForm(!showAddForm)} variant={showAddForm ? "secondary" : "default"}>
-                    {showAddForm ? "Cancel" : <><Plus className="w-4 h-4 mr-2" /> Add New</>}
+                    {showAddForm ? "Cancel" : <><Plus className="w-4 h-4 mr-2" /> Add Transaction</>}
                 </Button>
             </div>
 
             {showAddForm && (
                 <div className="animate-fade-in-up">
-                    <AddExpenseForm onSuccess={() => setShowAddForm(false)} />
+                    <AddTransactionForm onSuccess={() => setShowAddForm(false)} />
                 </div>
             )}
 
