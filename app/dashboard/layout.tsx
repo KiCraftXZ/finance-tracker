@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
     LayoutDashboard,
     Wallet,
@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const sidebarItems = [
     { href: '/dashboard', icon: LayoutDashboard, label: 'Overview' },
@@ -28,7 +28,20 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
+    const router = useRouter();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [userName, setUserName] = useState<string | null>(null);
+
+    useEffect(() => {
+        const user = localStorage.getItem("finance_user_name");
+        if (!user) {
+            router.push("/login");
+        } else {
+            setUserName(user);
+        }
+    }, [router]);
+
+    if (!userName) return null; // Prevent flash of content
 
     return (
         <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col md:flex-row">

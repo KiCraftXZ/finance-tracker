@@ -84,7 +84,7 @@ export default function Home() {
             </Link>
           </div>
           <Link
-            href="#get-started"
+            href="/login"
             className="rounded-full bg-[var(--accent)] text-[var(--background)] px-5 py-2 text-sm font-medium transition-smooth hover:opacity-90"
           >
             Get Started
@@ -105,7 +105,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in opacity-0 delay-300">
             <Link
-              href="#get-started"
+              href="/login"
               className="rounded-full bg-[var(--accent)] text-[var(--background)] px-8 py-3.5 text-base font-medium transition-smooth hover:opacity-90"
             >
               Start for Free
@@ -253,7 +253,7 @@ export default function Home() {
           </p>
           <div className="mt-10">
             <Link
-              href="#"
+              href="/login"
               className="inline-block rounded-full bg-[var(--accent)] text-[var(--background)] px-10 py-4 text-base font-medium transition-smooth hover:opacity-90"
             >
               Get Started — It&apos;s Free
